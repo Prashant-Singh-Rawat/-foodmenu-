@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item h2 {
+            margin: 0 0 10px;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OUR FOOD MENU</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="filterMenu('all')">All</a></li>
+                <li><a href="#" onclick="filterMenu('starter')">Starter</a></li>
+                <li><a href="#" onclick="filterMenu('main')">Main Courses</a></li>
+                <li><a href="#" onclick="filterMenu('desserts')">Desserts</a></li>
+                <li><a href="#" onclick="filterMenu('juices')">Juices</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="menu">
+        <div class="menu-item starter">
+            <img src="Veg-Manchurian.webp" alt="Manchurian" />
+            <h2>Manchuriandry</h2>
+            <p>Chinese hot sauce with fresh coriander and spring onion.</p>
+            <span>150 Rs</span>
+        </div>
+        <div class="menu-item main">
+            <img src="paneer2.jpg" alt="Volcano Pizza" />
+            <h2>Paneer Pizza</h2>
+            <p>Classic pizza sauce, hot tandoori sauce, tandoori paneer, mozzarella cheese, cheese burst base, and pepper.</p>
+            <span>150 Rs</span>
+        </div>
+        <div class="menu-item desserts">
+            <img src="chocolate-brownie-with-vanilla-ice-cream_1004538-1379.avif" alt="Paneer Pizza" />
+            <h2>Chocolate with Brownie</h2>
+            <p>Chill ice with hot Brownie.</p>
+            <span>120 Rs</span>
+        </div>
+        <div class="menu-item juices">
+            <img src="cocacola.jfif" alt="Coca-Cola" />
+            <h2>Coca-Cola</h2>
+            <p>With cold ice</p>
+            <span>45 Rs</span>
+        </div>
+        <div class="menu-item starter">
+            <img src="dragon potato.jfif" alt="Dragon Potato" />
+            <h2>Dragon Potato</h2>
+            <p>Hot crispy dragon potato with tomato sauce and cheese sauce.</p>
+            <span>150 Rs</span>
+        </div>
+        <div class="menu-item main">
+            <img src="Thali-01.png" alt="Chicken Pizza" />
+            <h2>Veg Thali</h2>
+            <p>Contains 4 parathas, 2-veg Sabji, Curd, Daal.</p>
+            <span>200 Rs</span>
+        </div>
+        <div class="menu-item desserts">
+            <img src="cheese cakee.jfif" alt="Cheesecake" />
+            <h2>Cheesecake</h2>
+            <p>Rich and creamy cheesecake with a graham cracker crust.</p>
+            <span>90 Rs</span>
+        </div>
+        <div class="menu-item juices">
+            <img src="LASSI.jfif" alt="Lassi" />
+            <h2>Lassi</h2>
+            <p>Sweet lassi/Normal lassi</p>
+            <span>60 Rs</span>
+        </div>
+    </main>
+
+    <script>
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
